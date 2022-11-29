@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" fx:controller="databaseproject.CompanyProfileEditController">
+    <stylesheets>
+        <URL value="@companyprofileedit.css"/>
+    </stylesheets>
+    <children>
+      <ImageView fitHeight="720.0" fitWidth="1280.0" pickOnBounds="true">
+         <image>
+            <Image url="@images/black-trianglify-23e488d7.jpg" />
+         </image>
+      </ImageView>
+      <TextField id="TextField" fx:id="companyName" layoutX="490.0" layoutY="110.0" maxHeight="31.0" maxWidth="300.0" minHeight="31.0" minWidth="200.0" opacity="0.7" prefHeight="31.0" prefWidth="300.0" promptText="Enter company name" />
+      <TextField id="TextField" fx:id="companyEmail" layoutX="490.0" layoutY="171.0" maxHeight="31.0" maxWidth="300.0" minHeight="31.0" minWidth="200.0" opacity="0.7" prefHeight="31.0" prefWidth="300.0" promptText="Enter email address" />
+      <TextField id="TextField" fx:id="companyPassword" layoutX="490.0" layoutY="232.0" maxHeight="31.0" maxWidth="300.0" minHeight="31.0" minWidth="200.0" opacity="0.7" prefHeight="31.0" prefWidth="300.0" promptText="Enter password" />
+      <TextField id="TextField" fx:id="companyContact" layoutX="490.0" layoutY="354.0" maxHeight="31.0" maxWidth="300.0" minHeight="31.0" minWidth="200.0" opacity="0.7" prefHeight="31.0" prefWidth="300.0" promptText="Contact no." />
+      <TextArea id="TextArea" fx:id="companyAddress" layoutX="490.0" layoutY="415.0" maxHeight="60.0" maxWidth="450.0" minHeight="60.0" minWidth="200.0" opacity="0.7" prefHeight="60.0" prefWidth="450.0" promptText="Address" />
+      <ComboBox id="ComboBox" fx:id="organizationType" layoutX="490.0" layoutY="293.0" maxHeight="31.0" maxWidth="300.0" minHeight="31.0" minWidth="200.0" opacity="0.7" prefHeight="31.0" prefWidth="300.0" promptText="Organization type" />
+      <Button layoutX="490.0" layoutY="550.0" mnemonicParsing="false" onAction="#companySignUpSubmitAction" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #FFC300;" text="Sign Up" />
+      <Label layoutX="455.0" layoutY="115.0" text="*" textFill="#cc3d3d" />
+      <Label layoutX="455.0" layoutY="176.0" text="*" textFill="#cc3d3d" />
+      <Label layoutX="455.0" layoutY="237.0" text="*" textFill="#cc3d3d" />
+      <Label layoutX="455.0" layoutY="298.0" text="*" textFill="#cc3d3d" />
+      <Label layoutX="455.0" layoutY="359.0" text="*" textFill="#cc3d3d" />
+      <Label layoutX="455.0" layoutY="435.0" text="*" textFill="#cc3d3d" />
+      <Label layoutX="490.0" layoutY="63.0" text="*Fields can not be empty" textFill="#cd3c3c" />
+      <Label id="Label" fx:id="error" layoutX="490.0" layoutY="631.0" prefWidth="237.0" textFill="#cd3c3c" />
+      <Button layoutX="14.0" layoutY="14.0" maxHeight="45.0" maxWidth="33.0" mnemonicParsing="false" onAction="#backAction" prefHeight="45.0" prefWidth="33.0" style="-fx-background-color: #FFC300;">
+         <graphic>
+            <ImageView fitHeight="45.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/Back-512.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+   </children>
+</AnchorPane>

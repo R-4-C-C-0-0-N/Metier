@@ -1,0 +1,17 @@
+.mainFxmlClass {
+
+}
+.text-field{
+    -fx-border-color: white;
+    -fx-border-width: 0 0 1 0;
+    -fx-background-color: transparent;
+    -fx-text-fill: white ;
+    -fx-prompt-text-fill: white ;
+}
+.text-field:focused{
+    -fx-border-color: white;
+    -fx-border-width: 0 0 1 0;
+    -fx-background-color: transparent;
+    -fx-text-fill: white ;
+    -fx-prompt-text-fill: white ;
+}

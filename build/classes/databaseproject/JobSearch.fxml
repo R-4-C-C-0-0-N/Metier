@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #1A1A1A;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="databaseproject.JobSearchController">
+    <stylesheets>
+        <URL value="@jobsearch.css" />
+    </stylesheets>
+   <children>
+      <TableView id="TableView" fx:id="jobResults" layoutY="286.0" prefHeight="434.0" prefWidth="1280.0" style="-fx-background-color: #1A1A1A;">
+        <columns>
+          <TableColumn id="TableColumn" fx:id="tJobId" prefWidth="110.0" text="Job Id" />
+          <TableColumn id="TableColumn" fx:id="tCompanyId" prefWidth="110.0" text="Company Id" />
+            <TableColumn id="TableColumn" fx:id="tJobSector" prefWidth="140.0" text="Job Sector" />
+            <TableColumn id="TableColumn" fx:id="tJobPost" prefWidth="140.0" text="Job Post" />
+            <TableColumn id="TableColumn" fx:id="tJobSalary" prefWidth="110.0" text="Job Salary" />
+            <TableColumn id="TableColumn" fx:id="tJobRequiredSkill" prefWidth="450.0" text="Required Skill/s" />
+            <TableColumn id="TableColumn" fx:id="tJobExperience" minWidth="0.0" prefWidth="110.0" text="Experience" />
+            <TableColumn id="TableColumn" fx:id="tJobMinimumAge" minWidth="0.0" prefWidth="110.0" text="Minimum Age" />
+        </columns>
+      </TableView>
+      <Button layoutX="565.0" layoutY="223.0" mnemonicParsing="false" onAction="#jobSearchAction" prefWidth="150.0" style="-fx-background-color: #3A3A3A;" text="Search for jobs" textFill="WHITE" />
+      <ComboBox id="ComboBox" fx:id="vJobSector" layoutX="28.75" layoutY="150.0" prefWidth="150.0" promptText="Job Sector" />
+      <ComboBox id="ComboBox" fx:id="vJobPost" layoutX="207.5" layoutY="150.0" prefWidth="150.0" promptText="Job Post" />
+      <ComboBox id="ComboBox" fx:id="vSkill1" layoutX="386.25" layoutY="150.0" prefWidth="150.0" promptText="Required Skill" />
+      <ComboBox id="ComboBox" fx:id="vSkill2" layoutX="565.0" layoutY="150.0" prefWidth="150.0" promptText="Required Skill" />
+      <ComboBox id="ComboBox" fx:id="vSkill3" layoutX="743.75" layoutY="150.0" prefWidth="150.0" promptText="Required Skill" />
+      <ComboBox id="ComboBox" fx:id="vJobMinimumAge" layoutX="1101.25" layoutY="150.0" prefWidth="150.0" promptText="Minimum Age" />
+      <TextField id="TextField" fx:id="vJobSalary" layoutX="922.5" layoutY="150.0" prefWidth="150.0" promptText="Job Salary" />
+      <TextField id="TextField" fx:id="companyId" layoutX="457.5" layoutY="37.0" prefHeight="32.0" prefWidth="333.0" promptText="Search with company id to see company profile" />
+      <Button layoutX="14.0" layoutY="14.0" maxHeight="31.0" maxWidth="33.0" minHeight="31.0" minWidth="33.0" mnemonicParsing="false" onAction="#backAction" prefHeight="31.0" prefWidth="33.0" style="-fx-background-color: #1A1A1A;">
+         <graphic>
+            <ImageView fitHeight="31.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/arrow-93-48.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <Button layoutX="1233.0" layoutY="14.0" maxHeight="31.0" maxWidth="33.0" minHeight="31.0" minWidth="33.0" mnemonicParsing="false" onAction="#exitAction" prefHeight="31.0" prefWidth="33.0" style="-fx-background-color: #1A1A1A;">
+         <graphic>
+            <ImageView fitHeight="31.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/close-window-48.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button layoutX="791.0" layoutY="38.0" maxHeight="31.0" maxWidth="33.0" minHeight="31.0" minWidth="33.0" mnemonicParsing="false" onAction="#companyProfileAction" prefHeight="31.0" prefWidth="33.0" style="-fx-background-color: #1A1A1A;">
+         <graphic>
+            <ImageView fitHeight="31.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/search-10-48.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+   </children>
+</AnchorPane>

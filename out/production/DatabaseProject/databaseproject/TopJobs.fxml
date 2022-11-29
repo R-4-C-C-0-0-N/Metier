@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #1A1A1A;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="databaseproject.TopJobsController">
+    <stylesheets>
+        <URL value="@topjobs.css" />
+    </stylesheets>
+   <children>
+      <TableView id="TableView" fx:id="jobResults" layoutY="70.0" prefHeight="650.0" prefWidth="1280.0" style="-fx-background-color: #1A1A1A;">
+        <columns>
+          <TableColumn id="TableColumn" fx:id="tJobId" prefWidth="110.0" text="Job Id" />
+          <TableColumn id="TableColumn" fx:id="tCompanyId" prefWidth="110.0" text="Company Id" />
+            <TableColumn id="TableColumn" fx:id="tJobSector" prefWidth="140.0" text="Job Sector" />
+            <TableColumn id="TableColumn" fx:id="tJobPost" prefWidth="140.0" text="Job Post" />
+            <TableColumn id="TableColumn" fx:id="tJobSalary" prefWidth="110.0" text="Job Salary" />
+            <TableColumn id="TableColumn" fx:id="tJobRequiredSkill" prefWidth="450.0" text="Required Skill/s" />
+            <TableColumn id="TableColumn" fx:id="tJobExperience" minWidth="0.0" prefWidth="110.0" text="Experience" />
+            <TableColumn id="TableColumn" fx:id="tJobMinimumAge" minWidth="0.0" prefWidth="110.0" text="Minimum Age" />
+        </columns>
+      </TableView>
+      <Button layoutX="14.0" layoutY="14.0" maxHeight="31.0" maxWidth="33.0" minHeight="31.0" minWidth="33.0" mnemonicParsing="false" onAction="#backAction" prefHeight="31.0" prefWidth="33.0" style="-fx-background-color: #1A1A1A;">
+         <graphic>
+            <ImageView fitHeight="31.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/arrow-93-48.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <Button layoutX="1233.0" layoutY="14.0" maxHeight="31.0" maxWidth="33.0" minHeight="31.0" minWidth="33.0" mnemonicParsing="false" onAction="#exitAction" prefHeight="31.0" prefWidth="33.0" style="-fx-background-color: #1A1A1A;">
+         <graphic>
+            <ImageView fitHeight="31.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/close-window-48.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+   </children>
+</AnchorPane>

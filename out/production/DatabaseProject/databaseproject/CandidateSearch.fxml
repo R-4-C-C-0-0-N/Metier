@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #1A1A1A;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="databaseproject.CandidateSearchController">
+    <stylesheets>
+        <URL value="@candidatesearch.css" />
+    </stylesheets>
+   <children>
+      <ComboBox id="ComboBox" fx:id="vCandidateMinimumAge" layoutX="14.0" layoutY="44.0" prefWidth="150.0" promptText="Minimum Age" />
+      <ComboBox id="ComboBox" fx:id="vSkill1" layoutX="175.0" layoutY="44.0" prefWidth="150.0" promptText="Skill1" />
+      <ComboBox id="ComboBox" fx:id="vSkill2" layoutX="335.0" layoutY="44.0" prefWidth="150.0" promptText="Skill2" />
+      <ComboBox id="ComboBox" fx:id="vSkill3" layoutX="503.0" layoutY="44.0" prefWidth="150.0" promptText="Skill3" />
+      <ComboBox id="ComboBox" fx:id="vCandidateExperience" layoutX="671.0" layoutY="44.0" prefWidth="150.0" promptText="Job Exp" />
+      <ComboBox id="ComboBox" fx:id="vAcademic" layoutX="836.0" layoutY="44.0" prefWidth="150.0" promptText="Academic " />
+      <TableView id="TableView" fx:id="candidateResults" layoutY="282.0" prefHeight="438.0" prefWidth="1280.0">
+        <columns>
+          <TableColumn id="TableColumn" fx:id="tCandidateId" prefWidth="127.0" text="Candidate Id" />
+          <TableColumn id="TableColumn" fx:id="tCandidateName" prefWidth="231.0" text="Name" />
+            <TableColumn id="TableColumn" fx:id="tCandidateAge" minWidth="0.0" prefWidth="66.0" text="Age" />
+            <TableColumn id="TableColumn" fx:id="tCandidateEmail" minWidth="0.0" prefWidth="131.0" text="Email" />
+            <TableColumn id="TableColumn" fx:id="tCandidateSkill" prefWidth="406.0" text="Skill" />
+            <TableColumn id="TableColumn" fx:id="tCandidateExperience" minWidth="0.0" prefWidth="318.0" text="Experience" />
+        </columns>
+      </TableView>
+      <Button layoutX="578.0" layoutY="207.0" mnemonicParsing="false" onAction="#candidateSearchAction" text="Search" />
+   </children>
+</AnchorPane>

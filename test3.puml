@@ -1,0 +1,410 @@
+@startuml
+class databaseproject.CompanyLogInController {
+~ Database db
++ TextField companyEmail
++ PasswordField companyPassword
++ Label error
+- void companyLogInSubmitAction(ActionEvent)
+- void backAction(ActionEvent)
+- void exitAction(ActionEvent)
++ void initialize(URL,ResourceBundle)
+}
+class databaseproject.CompanySignUpController {
+~ Database db
++ TextField companyName
++ ComboBox organizationType
++ TextArea companyAddress
++ Label error
+- void companySignUpSubmitAction(ActionEvent)
+- void backAction(ActionEvent)
++ void initialize(URL,ResourceBundle)
+}
+note top of databaseproject.CompanySignUpController
+
+ * FXML Controller class
+ *
+ * @author 6sand
+ 
+end note
+
+class databaseproject.UserTypeController {
+- void candidateLogInAction(ActionEvent)
+- void candidateSignUpAction(ActionEvent)
+- void companyLogInAction(ActionEvent)
+- void companySignUpAction(ActionEvent)
+- void exitAction(ActionEvent)
++ void initialize(URL,ResourceBundle)
+}
+class databaseproject.CandidateSignUpController {
+~ Database db
++ TextField candidateName
++ ComboBox<String> age
++ Label error
+- void addAcademicAction(ActionEvent)
+- void addSkillAction(ActionEvent)
+- void addSectorAction(ActionEvent)
+- void addPostAction(ActionEvent)
+- void candidateSignUpSubmitAction(ActionEvent)
+- void backAction(ActionEvent)
+- void exitAction(ActionEvent)
++ void initialize(URL,ResourceBundle)
+}
+class databaseproject.CandidateHomePageController {
+~ Database db
+~ int candidateId
+- void applicationPostAction(ActionEvent)
+- void jobSearchAction(ActionEvent)
+- void topJobsAction(ActionEvent)
+- void candidateProfileAction(ActionEvent)
+- void candidateProfileEditAction(ActionEvent)
+- void profileEditAction(ActionEvent)
++ void setCandidateId(int)
+- void backAction(ActionEvent)
+- void exitAction(ActionEvent)
++ void initialize(URL,ResourceBundle)
+}
+class databaseproject.TopJobsController {
+~ ObservableList<Jobs> list
+~ Database db
+~ int candidateId
+- TableView<Jobs> jobResults
+- TableColumn<Jobs,String> tJobSector
+- TableColumn<Jobs,String> tJobPost
+- TableColumn<Jobs,String> tJobRequiredSkill
+- TableColumn<Jobs,String> tJobExperience
+- TableColumn<Jobs,Integer> tJobId
+- TableColumn<Jobs,Integer> tCompanyId
+- TableColumn<Jobs,Integer> tJobSalary
+- TableColumn<Jobs,Integer> tJobMinimumAge
+- void backAction(ActionEvent)
+- void exitAction(ActionEvent)
++ void setCandidateId(int)
++ void initialize(URL,ResourceBundle)
+- void initColumns()
++ void topJobs()
+}
+class databaseproject.TopJobsController.Jobs {
+- SimpleStringProperty jJobSector
+- SimpleStringProperty jJobPost
+- SimpleStringProperty jJobRequiredSkill
+- SimpleStringProperty jJobExperience
+- SimpleIntegerProperty jJobId
+- SimpleIntegerProperty jCompanyId
+- SimpleIntegerProperty jJobSalary
+- SimpleIntegerProperty jJobMinimumAge
++ <<Create>> Jobs(int,int,String,String,int,String,String,int)
++ String getJJobSector()
++ String getJJobPost()
++ String getJJobRequiredSkill()
++ String getJJobExperience()
++ int getJJobId()
++ int getJCompanyId()
++ int getJJobSalary()
++ int getJJobMinimumAge()
+}
+class databaseproject.ApplicationPostController {
+~ int candidateId
+~ Database db
++ TextField jobId
++ Label error
+- void applicationPostAction(ActionEvent)
+- void backAction(ActionEvent)
+- void exitAction(ActionEvent)
++ void setCandidateId(int)
++ void initialize(URL,ResourceBundle)
+}
+class databaseproject.CandidateLogInController {
+~ Database db
++ TextField candidateEmail
++ PasswordField candidatePassword
++ Label error
+- void candidateLogInSubmitAction(ActionEvent)
+- void backAction(ActionEvent)
+- void exitAction(ActionEvent)
++ void signUpSuccess()
++ void initialize(URL,ResourceBundle)
+}
+class databaseproject.ApplicationsController {
+~ int companyId
+~ ObservableList<Applications> list
+~ Database db
+- TableView<Applications> applicationResults
+- TableColumn<Applications,Integer> tJobId
+- TableColumn<Applications,Integer> tCompanyId
+- TableColumn<Applications,Integer> tApplicationId
+- TableColumn<Applications,Integer> tCandidateId
++ void setCompanyId(int)
+- void backAction(ActionEvent)
+- void exitAction(ActionEvent)
++ void initialize(URL,ResourceBundle)
+- void printAction(ActionEvent)
+- void initColumns()
++ void applications()
+}
+class databaseproject.ApplicationsController.Applications {
+- SimpleIntegerProperty jApplicationId
+- SimpleIntegerProperty jJobId
+- SimpleIntegerProperty jCompanyId
+- SimpleIntegerProperty jCandidateId
++ <<Create>> Applications(int,int,int,int)
++ int getJApplicationId()
++ int getJJobId()
++ int getJCompanyId()
++ int getJCandidateId()
+}
+class databaseproject.CompanyHomePageController {
+~ int companyId
+~ Database db
+- void homeAction(ActionEvent)
+- void applicationPostAction(ActionEvent)
+- void candidateSearchAction(ActionEvent)
+- void applicationsAction(ActionEvent)
+- void companyProfileAction(ActionEvent)
+- void companyProfileEditAction(ActionEvent)
+- void backAction(ActionEvent)
+- void exitAction(ActionEvent)
++ void setCompanyId(int)
++ void initialize(URL,ResourceBundle)
+}
+class databaseproject.CandidateProfileEditController {
+~ Database db
+~ int candidateId
++ TextField candidateName
++ ComboBox<String> age
++ Label error
+- void addAcademicAction(ActionEvent)
+- void addSkillAction(ActionEvent)
+- void addExpAction(ActionEvent)
+- void addSectorAction(ActionEvent)
+- void addPostAction(ActionEvent)
+- void candidateSignUpSubmitAction(ActionEvent)
+- void backAction(ActionEvent)
+- void exitAction(ActionEvent)
++ void setCandidateId(int)
++ void initialize(URL,ResourceBundle)
+~ void setCandidatePassword(String)
+~ void setCandidateName(String)
+~ void setCandidateEmail(String)
+~ void setCandidateContact(String)
+~ void setCandidateExp(String)
+~ void setCandidateAddress(String)
+~ void setCandidateAcademic(String)
+~ void setCandidateCurricular(String)
+~ void setCandidateSkill(String)
+~ void setCandidatePost(String)
+~ void setCandidateSector(String)
+}
+class databaseproject.CandidateSearchController {
+~ ObservableList<Candidates> list
+~ Database db
++ ComboBox<String> vCandidateMinimumAge
+- TableView<Candidates> candidateResults
+- TableColumn<Candidates,Integer> tCandidateId
+- TableColumn<Candidates,String> tCandidateName
+- TableColumn<Candidates,Integer> tCandidateAge
+- TableColumn<Candidates,String> tCandidateEmail
+- TableColumn<Candidates,String> tCandidateSkill
+- TableColumn<Candidates,String> tCandidateExperience
+- void candidateSearchAction(ActionEvent)
++ void initialize(URL,ResourceBundle)
+- void initColumns()
++ void loadData()
+}
+class databaseproject.CandidateSearchController.Candidates {
+- SimpleIntegerProperty jCandidateId
+- SimpleStringProperty jCandidateName
+- SimpleIntegerProperty jCandidateAge
+- SimpleStringProperty jCandidateEmail
+- SimpleStringProperty jCandidateSkill
+- SimpleStringProperty jCandidateExperience
++ <<Create>> Candidates(int,String,int,String,String,String)
++ int getJCandidateId()
++ String getJCandidateName()
++ int getJCandidateAge()
++ String getJCandidateEmail()
++ String getJCandidateSkill()
++ String getJCandidateExperience()
+}
+class databaseproject.JobPostController {
+~ int companyId
+~ Database db
++ TextField candidateSkill
++ ComboBox<String> age
++ Label error
+- void addSkillAction(ActionEvent)
+- void addExpAction(ActionEvent)
+- void addSectorAction(ActionEvent)
+- void addPostAction(ActionEvent)
+- void jobPostAction(ActionEvent)
++ void setCompanyId(int)
++ void initialize(URL,ResourceBundle)
+}
+class databaseproject.JobSearchController {
+~ ObservableList<Jobs> list
+~ Database db
+~ int candidateId
++ ComboBox<String> vJobSector
++ TextField vJobSalary
+- TableView<Jobs> jobResults
+- TableColumn<Jobs,String> tJobSector
+- TableColumn<Jobs,String> tJobPost
+- TableColumn<Jobs,String> tJobRequiredSkill
+- TableColumn<Jobs,String> tJobExperience
+- TableColumn<Jobs,Integer> tJobId
+- TableColumn<Jobs,Integer> tCompanyId
+- TableColumn<Jobs,Integer> tJobSalary
+- TableColumn<Jobs,Integer> tJobMinimumAge
+- void jobSearchAction(ActionEvent)
+- void backAction(ActionEvent)
+- void exitAction(ActionEvent)
++ void setCandidateId(int)
+- void companyProfileAction(ActionEvent)
++ void initialize(URL,ResourceBundle)
+- void initColumns()
+}
+class databaseproject.JobSearchController.Jobs {
+- SimpleStringProperty jJobSector
+- SimpleStringProperty jJobPost
+- SimpleStringProperty jJobRequiredSkill
+- SimpleStringProperty jJobExperience
+- SimpleIntegerProperty jJobId
+- SimpleIntegerProperty jCompanyId
+- SimpleIntegerProperty jJobSalary
+- SimpleIntegerProperty jJobMinimumAge
++ <<Create>> Jobs(int,int,String,String,int,String,String,int)
++ String getJJobSector()
++ String getJJobPost()
++ String getJJobRequiredSkill()
++ String getJJobExperience()
++ int getJJobId()
++ int getJCompanyId()
++ int getJJobSalary()
++ int getJJobMinimumAge()
+}
+class databaseproject.Database {
+~ Connection con
+~ Statement statement
++ void dbConnect()
++ void runQueryUpdate(String)
++ Connection getCon()
+}
+note top of databaseproject.Database
+
+ *
+ * @author 6sand
+ 
+end note
+
+class databaseproject.SplashScreenController {
+- AnchorPane ap
++ Label loadingPercentage
++ int i
++ ProgressBar load
++ void initialize(URL,ResourceBundle)
+}
+class databaseproject.SplashScreenController.ShowSplashScreen {
++ void run()
+}
+class databaseproject.CompanyProfileController {
+~ int flag
+~ int cid
+~ int caid
+~ Label companyId
++ void initialize(URL,ResourceBundle)
+~ void setCompanyId(String)
+~ void setCompanyName(String)
+~ void setCompanyEmail(String)
+~ void setCompanyContact(String)
+~ void setCompanyType(String)
+~ void setCompanyAddress(String)
+~ void setFlag(int)
+~ void setCId(int)
+~ void setCaId(int)
+- void backAction(ActionEvent)
+- void exitAction(ActionEvent)
+}
+class databaseproject.CompanyProfileEditController {
+~ int companyId
+~ Database db
++ TextField companyName
++ ComboBox organizationType
++ TextArea companyAddress
++ Label error
+- void companySignUpSubmitAction(ActionEvent)
+- void backAction(ActionEvent)
++ void setCompanyId(int)
++ void initialize(URL,ResourceBundle)
+~ void setCompanyName(String)
+~ void setCompanyEmail(String)
+~ void setCompanyContact(String)
+~ void setCompanyAddress(String)
+~ void setCompanyPassword(String)
+}
+note top of databaseproject.CompanyProfileEditController
+
+ * FXML Controller class
+ *
+ * @author 6sand
+ 
+end note
+
+class databaseproject.CandidateProfileController {
+~ int eCandidateId
+~ Label candidateId
+- void backAction(ActionEvent)
+- void exitAction(ActionEvent)
++ void setCandidateId(int)
++ void initialize(URL,ResourceBundle)
+~ void setCandidateId(String)
+~ void setCandidateName(String)
+~ void setCandidateAge(String)
+~ void setCandidateEmail(String)
+~ void setCandidateContact(String)
+~ void setCandidateExp(String)
+~ void setCandidateAddress(String)
+~ void setCandidateAcademic(String)
+~ void setCandidateExtra(String)
+~ void setCandidateSkill(String)
+~ void setCandidatePost(String)
+~ void setCandidateSector(String)
+}
+note top of databaseproject.CandidateProfileController
+
+ * FXML Controller class
+ *
+ * @author 6sand
+ 
+end note
+
+class databaseproject.SplashScreen {
++ void start(Stage)
++ {static} void main(String[])
+}
+
+
+javafx.fxml.Initializable <|.. databaseproject.CompanyLogInController
+javafx.fxml.Initializable <|.. databaseproject.CompanySignUpController
+javafx.fxml.Initializable <|.. databaseproject.UserTypeController
+javafx.fxml.Initializable <|.. databaseproject.CandidateSignUpController
+javafx.fxml.Initializable <|.. databaseproject.CandidateHomePageController
+javafx.fxml.Initializable <|.. databaseproject.TopJobsController
+databaseproject.TopJobsController +.. databaseproject.TopJobsController.Jobs
+javafx.fxml.Initializable <|.. databaseproject.ApplicationPostController
+javafx.fxml.Initializable <|.. databaseproject.CandidateLogInController
+javafx.fxml.Initializable <|.. databaseproject.ApplicationsController
+databaseproject.ApplicationsController +.. databaseproject.ApplicationsController.Applications
+javafx.fxml.Initializable <|.. databaseproject.CompanyHomePageController
+javafx.fxml.Initializable <|.. databaseproject.CandidateProfileEditController
+javafx.fxml.Initializable <|.. databaseproject.CandidateSearchController
+databaseproject.CandidateSearchController +.. databaseproject.CandidateSearchController.Candidates
+javafx.fxml.Initializable <|.. databaseproject.JobPostController
+javafx.fxml.Initializable <|.. databaseproject.JobSearchController
+databaseproject.JobSearchController +.. databaseproject.JobSearchController.Jobs
+javafx.fxml.Initializable <|.. databaseproject.SplashScreenController
+databaseproject.SplashScreenController +.. databaseproject.SplashScreenController.ShowSplashScreen
+databaseproject.Thread <|-- databaseproject.SplashScreenController.ShowSplashScreen
+javafx.fxml.Initializable <|.. databaseproject.CompanyProfileController
+javafx.fxml.Initializable <|.. databaseproject.CompanyProfileEditController
+javafx.fxml.Initializable <|.. databaseproject.CandidateProfileController
+javafx.application.Application <|-- databaseproject.SplashScreen
+@enduml

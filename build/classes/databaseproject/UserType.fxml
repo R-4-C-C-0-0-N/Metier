@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #1A1A1A;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="databaseproject.UserTypeController">
+    <stylesheets>
+        <URL value="@usertype.css" />
+    </stylesheets>
+   <children>
+      <AnchorPane layoutX="680.0" layoutY="54.0" prefHeight="612.0" prefWidth="500.0" style="-fx-background-color: #2A2A2A;">
+         <children>
+            <ImageView fitHeight="300.0" fitWidth="500.0" pickOnBounds="true">
+               <image>
+                  <Image url="@images/usertypecompany.jpg" />
+               </image>
+            </ImageView>
+            <Button layoutX="110.0" layoutY="557.0" mnemonicParsing="false" onAction="#companyLogInAction" prefWidth="110.0" style="-fx-background-color: #2A2A2A;" text="Log In" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="31.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/account-login-48.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Button layoutX="282.0" layoutY="557.0" mnemonicParsing="false" onAction="#companySignUpAction" style="-fx-background-color: #2A2A2A;" text="Sign Up" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="31.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/add-user-3-48.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Label alignment="CENTER" layoutX="43.0" layoutY="342.0" prefHeight="35.0" prefWidth="415.0" text="Don't be the same be better" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Calibri" size="18.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="43.0" layoutY="377.0" prefHeight="21.0" prefWidth="415.0" text="Find the perfect guy for the job" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Calibri" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="100.0" layoutY="54.0" prefHeight="612.0" prefWidth="500.0" style="-fx-background-color: #2A2A2A;">
+         <children>
+            <ImageView fitHeight="300.0" fitWidth="500.0" pickOnBounds="true">
+               <image>
+                  <Image url="@images/usertypecandidate2.jpg" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" layoutY="342.0" prefHeight="35.0" prefWidth="500.0" text="Aim Higher  Reach Further  Dream Bigger" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Calibri" size="18.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="43.0" layoutY="377.0" prefHeight="21.0" prefWidth="415.0" text="Find the career you deserve" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Calibri" size="18.0" />
+               </font>
+            </Label>
+            <Button layoutX="110.0" layoutY="557.0" mnemonicParsing="false" onAction="#candidateLogInAction" prefWidth="110.0" style="-fx-background-color: #2A2A2A;" text="Log In" textAlignment="CENTER" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="31.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/account-login-48.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Button layoutX="282.0" layoutY="557.0" mnemonicParsing="false" onAction="#candidateSignUpAction" style="-fx-background-color: #2A2A2A;" text="Sign Up" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="31.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/add-user-3-48.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+         </children>
+      </AnchorPane>
+      <ImageView fitHeight="79.0" fitWidth="80.0" layoutX="600.0" layoutY="331.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/logo.jpg" />
+         </image>
+      </ImageView>
+      <Button layoutX="1233.0" layoutY="14.0" maxHeight="31.0" maxWidth="33.0" minHeight="31.0" minWidth="33.0" mnemonicParsing="false" onAction="#exitAction" prefHeight="31.0" prefWidth="33.0" style="-fx-background-color: #1A1A1A;">
+         <graphic>
+            <ImageView fitHeight="31.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/close-window-48.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+   </children>
+</AnchorPane>

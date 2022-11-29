@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="DatabaseProject.jnlp">
+  <information>
+    <title>DatabaseProject</title>
+    <vendor>6sand</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="DatabaseProject.jar" size="4088173" download="eager" />
+    <jar href="lib\sqljdbc41.jar" size="900895" download="eager" />
+    <jar href="lib\sqljdbc42.jar" size="898868" download="eager" />
+  </resources>
+  <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="DatabaseProject" >
+    <param name="requiredFXVersion" value="8.0+"/>
+  </applet-desc>
+  <jfx:javafx-desc  width="800" height="600" main-class="databaseproject.SplashScreen"  name="DatabaseProject" />
+  <update check="always"/>
+</jnlp>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #1A1A1A;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="databaseproject.ApplicationsController">
+    <stylesheets>
+        <URL value="@applications.css" />
+    </stylesheets>
+   <children>
+      <TableView id="TableView" fx:id="applicationResults" layoutY="60.0" prefHeight="660.0" prefWidth="1280.0" style="-fx-background-color: #1A1A1A;">
+        <columns>
+          <TableColumn id="TableColumn" fx:id="tApplicationId" prefWidth="320.0" text="AID" />
+          <TableColumn id="TableColumn" fx:id="tJobId" prefWidth="320.0" text="JID" />
+            <TableColumn id="TableColumn" fx:id="tCompanyId" prefWidth="320.0" text="COID" />
+            <TableColumn id="TableColumn" fx:id="tCandidateId" prefWidth="320.0" text="CAID" />
+        </columns>
+      </TableView>
+      <Button layoutX="612.0" layoutY="14.0" mnemonicParsing="false" onAction="#printAction" style="-fx-background-color: #3A3A3A;" text="Show" textFill="WHITE" />
+      <Button layoutX="14.0" layoutY="14.0" maxHeight="31.0" maxWidth="33.0" minHeight="31.0" minWidth="33.0" mnemonicParsing="false" onAction="#backAction" prefHeight="31.0" prefWidth="33.0" style="-fx-background-color: #1A1A1A;">
+         <graphic>
+            <ImageView fitHeight="31.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/arrow-93-48.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <Button layoutX="1233.0" layoutY="14.0" maxHeight="31.0" maxWidth="33.0" minHeight="31.0" minWidth="33.0" mnemonicParsing="false" onAction="#exitAction" prefHeight="31.0" prefWidth="33.0" style="-fx-background-color: #1A1A1A;">
+         <graphic>
+            <ImageView fitHeight="31.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/close-window-48.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+   </children>
+</AnchorPane>
