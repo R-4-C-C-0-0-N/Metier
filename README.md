@@ -14,5 +14,6 @@ Metier is a desktop career management application designed with JavaFX that is m
   - Independently search for prospective candidates based on different search criteria
 - Job seekers can:
   - Look for open positions and postings based on their skill sets, preferred salary range, type of the job, & other requirements
+- Top job circular shout outs in each job sector based on currently active posting parameters
 ## UML Diagram
 To give a quick understanding of the object-oriented static structure of the system, a UML class diagram is provided in this [link](https://drive.google.com/file/d/16dsOyuYgx51Xdujw9YqW_pcxZEy0NW7f/view?usp=share_link).
